@@ -8,18 +8,22 @@ public class Tram{
         Scanner s = new Scanner(System.in);
 
         int max_cap = 0;
+        int remain = 0;
         int n = s.nextInt();
 
         for(int i = 0; i < n; i++) {
-
+            System.out.println("\n\nIteration : " + (i+1));
             int a = s.nextInt();
             int b = s.nextInt();
 
-            int exit = b - a;
+            if(i == 0) {
+                remain = b - a;
+                max_cap = remain;
+                continue;
+            }
 
-            if(i == 0) continue;
-
-            max_cap = exit + b;
+            remain -= a;
+            max_cap = remain + b;
         }
 
         System.out.println(max_cap);
