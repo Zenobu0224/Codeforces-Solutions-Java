@@ -18,14 +18,11 @@ public class Tram{
 
             if(i == 0) {
                 remain = b - a;
-                System.out.println("Remain : " + remain);
                 max_cap = remain;
-                System.out.println("Max Capacity : " + max_cap);
                 continue;
             }
 
             remain = (max_cap - a) + b;
-            System.out.println("Max Capacity : " + remain);
 
             if(max_cap < remain) max_cap = remain;
         }
