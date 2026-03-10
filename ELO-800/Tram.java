@@ -12,22 +12,15 @@ public class Tram{
         int n = s.nextInt();
 
         for(int i = 0; i < n; i++) {
-            System.out.println("\n\nIteration : " + (i+1));
             int a = s.nextInt();
             int b = s.nextInt();
 
-            if(i == 0) {
-                remain = b - a;
-                max_cap = remain;
-                continue;
-            }
+            remain = remain - a + b;
 
-            remain = (max_cap - a) + b;
-
-            if(max_cap < remain) max_cap = remain;
+            if(remain > max_cap) max_cap = remain;
         }
 
-        System.out.println("\n\n" + max_cap);
+        System.out.println(max_cap);
 
         s.close();
 
