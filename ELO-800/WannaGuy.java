@@ -20,7 +20,7 @@ public class WannaGuy{
         }    
         
         int q_pass = s.nextInt();
-        for(int i = 0; i < n-1; i++) {
+        for(int i = 0; i < q_pass; i++) {
             int q = s.nextInt();
 
             passed[q-1] = true;
