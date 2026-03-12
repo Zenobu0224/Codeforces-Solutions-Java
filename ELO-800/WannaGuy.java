@@ -4,51 +4,35 @@ import java.util.Scanner;
 
 public class WannaGuy{
 
-    static boolean PassLevel(int n, int[] ps, int[] qs) {
-
-        boolean[] passed = new boolean[n];
-
-        for(int i = 0; i < ps.length; i++) {
-
-            for(int j = 0; j < i; j++) {
-                if(ps[j] == i+1) passed[j] = true;
-            }
-
-        }
-
-        for(int i = 0; i < qs.length; i++) {
-
-            for(int j = 0; j < i; j++) {
-                if(qs[j] == i+1) passed[j] = true;
-            }
-
-        }
-
-
-        for(int i = 0; i < n; i++) {
-            if(!passed[i]) return false;
-        }
-
-        return true;
-
-    }
     public static void main(String[] args) {
 
         Scanner s = new Scanner(System.in);
 
         int n = s.nextInt();
-        int[] ps = new int[n];
-        int[] qs = new int[n-1];
+
+        boolean[] passed = new boolean[n];
 
         for(int i = 0; i < n; i++) {
-            ps[i] = s.nextInt();
-        }
+        int p = s.nextInt();
 
+        passed[p-1] = true;
+        }    
+        
         for(int i = 0; i < n-1; i++) {
-            qs[i] = s.nextInt();
+            int q = s.nextInt();
+
+            passed[q-1] = true;
         }
 
-        System.out.println(PassLevel(n, ps, qs) ? "I become the guy." : "Oh, my keyboard!");
+        boolean passed_all = true;
+        for(int i = 0; i < n; i++) {
+            if(!passed[i]){
+                passed_all = false;
+                break;
+            }
+        }
+
+        System.out.println(passed_all ? "I become the guy." : "Oh, my keyboard!");
 
         s.close();
 
