@@ -11,13 +11,15 @@ public class WannaGuy{
         int n = s.nextInt();
 
         boolean[] passed = new boolean[n];
-
-        for(int i = 0; i < n; i++) {
+    
+        int p_pass = s.nextInt();
+        for(int i = 0; i < p_pass; i++) {
         int p = s.nextInt();
 
         passed[p-1] = true;
         }    
         
+        int q_pass = s.nextInt();
         for(int i = 0; i < n-1; i++) {
             int q = s.nextInt();
 
