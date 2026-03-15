@@ -14,9 +14,9 @@ public class WannaGuy{
     
         int p_pass = s.nextInt();
         for(int i = 0; i < p_pass; i++) {
-        int p = s.nextInt();
+            int p = s.nextInt();
 
-        passed[p-1] = true;
+            passed[p-1] = true;
         }    
         
         int q_pass = s.nextInt();

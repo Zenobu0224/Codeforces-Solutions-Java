@@ -4,31 +4,28 @@ import java.util.Scanner;
 
 public class ArrivalGen {
 
-    static int[] heightFL(int[] soldier_height) {
-
-        int lowest = Integer.MAX_VALUE;
-        int highest = Integer.MIN_VALUE;
+    static int lower_steps(int[] soldier_height) {
 
         int steps = 0;
+        int min = Integer.MAX_VALUE;
 
+        int n = soldier_height.length - 1;
 
-        for(int i = 0; i < soldier_height.length; i++) {
-
-            if(lowest <= soldier_height[i]) lowest = i;
-
+        // Get the minimum height(index)
+        for(int i = 0; i < n; i++) {
+            if(soldier_height[i] <= min) min = i;
         }
 
-        for(int i = lowest+1; i < soldier_height.length - (lowest+1); i++) {
-            int lowest_i = i;
-            if(soldier_height[i] < soldier_height[lowest]){
-    
-                soldier_height[]
-
+        for(int i = 0; i < n-min; i++) {
+            if(soldier_height[min] < soldier_height[i+1]) {
+                int temp = soldier_height[min];
+                soldier_height[min] = soldier_height[i+1];
+                soldier_height[i+1] = temp;
+                steps++;
             }
         }
 
-
-
+        return steps;
     }
     public static void main(String[] args) {
 
