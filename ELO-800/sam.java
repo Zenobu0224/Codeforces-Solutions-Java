@@ -1,11 +1,11 @@
 public class sam {
     public static void main(String[] args) {
 
-        for(int i = 10; i > 0; i--) {
+        long n = 125;
 
-            System.out.println(i);
+        // long n1 = n%20;
 
-        }
+        System.out.println(n%100);
 
     }
 }
